@@ -19,3 +19,4 @@ This bundle creates a simple way to incorporate Uecode into Symfony
 	// ...
 	new Uecode\CommonBundle\UecodeCommonBundle
 ```
+
