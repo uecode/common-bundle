@@ -18,7 +18,7 @@
 		"email": "aaron@undergroundelephant.com"
 	},
 	"require":     {
-		"php":                          ">=5.3.6",
+		"php":                          ">=5.3.0",
 		"ext-json":                     "*",
 		"symfony/config":               ">=2.0.0,<2.2.0",
 		"symfony/dependency-injection": ">=2.0.0,<2.2.0",
