@@ -52,6 +52,7 @@ class Configuration implements ConfigurationInterface
 
 		$rootNode
 			->children()
+				->scalarNode( 'timeout' )->defaultValue( 10 )->end()
 				->arrayNode( 'connections' )
 					->requiresAtLeastOneElement()
 					->useAttributeAsKey( 'name' )
