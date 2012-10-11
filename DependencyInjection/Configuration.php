@@ -36,6 +36,7 @@ class Configuration implements ConfigurationInterface
 		$rootNode
 			->children()
 				->append( $this->addGearmanNode() )
+				->append( $this->addDaemonNode() )
 			->end()
 		;
 
@@ -52,8 +53,40 @@ class Configuration implements ConfigurationInterface
 
 		$rootNode
 			->children()
-				->scalarNode( 'timeout' )->defaultValue( 10 )->end()
-				->arrayNode( 'connections' )
+			->scalarNode( 'timeout' )->defaultValue( 10 )->end()
+			->arrayNode( 'connections' )
+			->requiresAtLeastOneElement()
+			->useAttributeAsKey( 'name' )
+			->prototype( 'array' )
+			->children()
+			->scalarNode( 'host' )
+			->defaultValue( '127.0.0.1' )
+			->end()
+			->scalarNode( 'port' )
+			->defaultValue( '4730' )
+			->end()
+			->end()
+			->end()
+			->end()
+			->scalarNode( 'debug' )
+			->defaultValue( 'false' )
+			->end()
+			->end()
+		;
+		return $rootNode;
+	}
+
+	/**
+	 * @return \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition|\Symfony\Component\Config\Definition\Builder\NodeDefinition
+	 */
+	public function addDaemonNode()
+	{
+		$treeBuilder = new TreeBuilder();
+		$rootNode = $treeBuilder->root( 'daemon' );
+
+		$rootNode
+			->children()
+				->arrayNode( 'daemons' )
 					->requiresAtLeastOneElement()
 					->useAttributeAsKey( 'name' )
 					->prototype( 'array' )
@@ -67,9 +100,7 @@ class Configuration implements ConfigurationInterface
 						->end()
 					->end()
 				->end()
-				->scalarNode( 'debug' )
-					->defaultValue( 'false' )
-				->end()
+				->scalarNode( 'debug' )->defaultValue( 'false' )->end()
 			->end()
 		;
 		return $rootNode;
