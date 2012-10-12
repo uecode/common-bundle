@@ -9,7 +9,7 @@ This bundle creates a simple way to incorporate Uecode into Symfony
 1. Add to composer.json under `require`
 
 ```
-"uecode/common": "dev-master",
+"uecode/common-bundle": "dev-master",
 ```
 
 2. Register in `AppKernel`
