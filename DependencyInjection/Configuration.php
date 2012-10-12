@@ -97,7 +97,7 @@ class Configuration implements ConfigurationInterface
 							->scalarNode( 'logDir' )->defaultValue( '%kernel.logs_dir%' )->end()
 							->scalarNode( 'authorName' )->defaultValue( '' )->end()
 							->scalarNode( 'authorEmail' )->defaultValue( '' )->end()
-							->scalarNode( 'appPidLocation' )->defaultValue( '%kernel.cache_dir%/daemons/' )->end()
+							->scalarNode( 'appPidDir' )->defaultValue( '%kernel.cache_dir%/daemons/' )->end()
 							->scalarNode( 'sysMaxExecutionTime' )->defaultValue( '0' )->end()
 							->scalarNode( 'sysMaxInputTime' )->defaultValue( '0' )->end()
 							->scalarNode( 'sysMemoryLimit' )->defaultValue( '1024M' )->end()
