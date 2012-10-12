@@ -94,7 +94,7 @@ class Configuration implements ConfigurationInterface
 							->scalarNode( 'appName' )->defaultValue( 'systemDaemon' )->end()
 							->scalarNode( 'appDir' )->defaultValue( '%kernel.root_dir%' )->end()
 							->scalarNode( 'appDescription' )->defaultValue( 'System Daemon' )->end()
-							->scalarNode( 'logLocation' )->defaultValue( '%kernel.root_dir%' )->end()
+							->scalarNode( 'logLocation' )->defaultValue( '%kernel.logs_dir%/%kernel.environment%.example.log' )->end()
 							->scalarNode( 'authorName' )->defaultValue( '' )->end()
 							->scalarNode( 'authorEmail' )->defaultValue( '' )->end()
 							->scalarNode( 'appPidLocation' )->defaultValue( '%kernel.cache_dir%/example/example.pid' )->end()
