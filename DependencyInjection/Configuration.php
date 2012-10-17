@@ -53,7 +53,21 @@ class Configuration implements ConfigurationInterface
 
 		$rootNode
 			->children()
-				->scalarNode( 'timeout' )->defaultValue( 10 )->end()
+				->append( $this->addGearmanClient() )
+				->append( $this->addGearmanServer() )
+			->end()
+		;
+		return $rootNode;
+	}
+
+	public function addGearmanClient( )
+	{
+		$treeBuilder = new TreeBuilder();
+		$rootNode    = $treeBuilder->root( 'client' );
+		$rootNode
+			->children()
+				->scalarNode( 'timeout' )->defaultValue( 3 )->end()
+				->scalarNode( 'attempts' )->defaultValue( 3 )->end()
 				->arrayNode( 'connections' )
 					->requiresAtLeastOneElement()
 					->useAttributeAsKey( 'name' )
@@ -72,7 +86,36 @@ class Configuration implements ConfigurationInterface
 					->defaultValue( 'false' )
 				->end()
 			->end()
-		;
+		->end();
+		return $rootNode;
+	}
+
+	private function addGearmanServer()
+	{
+		$queue_types = array( 'mysql', 'memcached', 'libsqlite3' );
+
+		$treeBuilder = new TreeBuilder();
+		$rootNode    = $treeBuilder->root( 'server' );
+		$rootNode
+			->children()
+				->scalarNode( 'host' )->defaultValue( '127.0.0.1' )->end()
+				->scalarNode( 'port' )->defaultValue( '4730' )->end()
+				->scalarNode( 'log_dir' )->defaultValue( '%kernel.logs_dir%' )->end()
+				->scalarNode( 'pid_dir' )->defaultValue( '%kernel.cache_dir%' )->end()
+				->scalarNode( 'queue_type')
+					->defaultValue( 'libsqlite3' )
+					->validate()
+						->ifNotInArray( $queue_types )
+						->thenInvalid( 'Invalid queue type "%s"' )
+					->end()
+				->end()
+				->arrayNode( 'sqlite' )
+					->children()
+						->scalarNode( 'db_dir' )->defaultValue( '%kernel.cache_dir%' )->end()
+					->end()
+				->end()
+			->end()
+		->end();
 		return $rootNode;
 	}
 
