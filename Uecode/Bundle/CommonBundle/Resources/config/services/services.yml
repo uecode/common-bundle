@@ -1,0 +1,19 @@
+services:
+    ue.user:
+        class: Uecode\Bundle\CommonBundle\Service\UserService
+        arguments: [ %uecode.services.user.entity%, %uecode.services.user.id_property% ]
+        calls:
+            - [ setSecurityContext, [ @security.context ] ]
+            - [ setEntityManager, [ @doctrine.orm.entity_manager ] ]
+            - [ init ]
+    ue.view:
+        class: Uecode\Bundle\CommonBundle\Service\ViewService
+        calls:
+            - [ init ]
+    ue.response:
+        class: Uecode\Bundle\CommonBundle\Service\ResponseService
+        calls:
+            - [ setTemplating, [ @templating ] ]
+            - [ setView, [ @ue.view ] ]
+            - [ setKernel, [ @kernel ] ]
+            - [ init ]
