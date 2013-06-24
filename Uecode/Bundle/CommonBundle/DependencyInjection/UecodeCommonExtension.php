@@ -42,6 +42,8 @@ class UecodeCommonExtension extends Extension
 		foreach ( glob( $dir . '*.yml' ) as $file ) {
 			$loader->load( $file );
 		}
+		
+		$this->setParameters( $container, $config );
 	}
 
 	private function setParameters( ContainerBuilder $container, array $configs, $prefix = 'uecode' )
