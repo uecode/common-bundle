@@ -19,7 +19,7 @@
  * limitations under the License.
  */
 
-namespace Uecode\Bundle\AmazonBundle\DependencyInjection;
+namespace Uecode\Bundle\CommonBundle\DependencyInjection;
 
 use \Symfony\Component\DependencyInjection\ContainerBuilder;
 use \Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
