@@ -1,11 +1,11 @@
 services:
-    ue.listener.before_controller:
+    uecode.listener.before_controller:
         class: Uecode\Bundle\CommonBundle\EventListener\ControllerListener
         calls:
             - [ setDispatcher, [ @event_dispatcher ] ]
             - [ setEntityManager, [ @doctrine.orm.entity_manager ] ]
-            - [ setUserService, [ @ue.user ] ]
-            - [ setResponseService, [ @ue.response ] ]
-            - [ setViewService, [ @ue.view ] ]
+            - [ setUserService, [ @uecode.user ] ]
+            - [ setResponseService, [ @uecode.response ] ]
+            - [ setViewService, [ @uecode.view ] ]
         tags:
             - { name: kernel.event_listener, event: kernel.controller, method: preController }
