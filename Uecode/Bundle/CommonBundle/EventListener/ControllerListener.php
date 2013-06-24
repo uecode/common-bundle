@@ -22,6 +22,7 @@ namespace Uecode\Bundle\CommonBundle\EventListener;
 
 use \Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 
+use \Uecode\Bundle\CommonBundle\UecodeCommonEvents;
 use \Uecode\Bundle\CommonBundle\Event\ControllerEvent;
 use \Uecode\Bundle\CommonBundle\Model\InitializableControllerInterface;
 use \Uecode\Bundle\CommonBundle\Traits\DatabaseAwareTrait;
