@@ -1,14 +1,14 @@
 services:
     uecode.twig.extension.inspect:
-        class: Ue\Bundle\BaseBundle\Extension\InspectExtension
+        class: Uecode\Bundle\CommonBundle\Extension\InspectExtension
         tags:
             - { name: 'twig.extension' }
     uecode.twig.extension.file:
-        class: Ue\Bundle\BaseBundle\Extension\FileExtension
+        class: Uecode\Bundle\CommonBundle\Extension\FileExtension
         arguments: [ @kernel ]
         tags:
             - { name: 'twig.extension' }
     uecode.twig.extension.string:
-        class: Ue\Bundle\BaseBundle\Extension\StringExtension
+        class: Uecode\Bundle\CommonBundle\Extension\StringExtension
         tags:
             - { name: 'twig.extension' }
