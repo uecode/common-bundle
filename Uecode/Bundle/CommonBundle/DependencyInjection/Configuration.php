@@ -21,25 +21,19 @@
 namespace Uecode\Bundle\CommonBUndle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
-use Symfony\Component\Config\Definition\ConfigurationInterface;
+use \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+
+
+use \Uecode\Bundle\UecodeBundle\DependencyInjection\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getConfigTreeBuilder()
+	public function appendTo( ArrayNodeDefinition &$rootNode );
 	{
-		$treeBuilder = new TreeBuilder();
-		$rootNode = $treeBuilder->root( 'uecode_common' );
-
-		$rootNode
-			->children()
-				->append( $this->getServiceNode() )
-			->end();
-		;
-
-		return $treeBuilder;
+		$rootNode->append( $this->getServiceNode() );
 	}
 
 	/**

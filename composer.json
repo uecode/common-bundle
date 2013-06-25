@@ -20,7 +20,7 @@
 		"php":             ">=5.4.0",
 		"ext-json":        "*",
 		"symfony/symfony": ">=2.0.0,<3",
-		"uecode/uecode":   "1.1.0"
+		"uecode/uecode-bundle": ">=0.1.0"
 	},
 	"autoload":    {
 		"psr-0": {
