@@ -26,6 +26,7 @@ use \Symfony\Component\HttpFoundation\Response;
 use \Symfony\Bundle\FrameworkBundle\Templating\DelegatingEngine;
 use \Symfony\Bundle\FrameworkBundle\Kernel;
 
+use \Uecode\Bundle\CommonBundle\UecodeCommonEvents;
 use \Uecode\Bundle\CommonBundle\Event\ResponseEvent;
 use \Uecode\Bundle\CommonBundle\Traits\DispatcherAwareTrait;
 
