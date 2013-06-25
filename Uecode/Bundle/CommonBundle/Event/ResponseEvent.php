@@ -26,7 +26,7 @@ use \Symfony\Component\HttpFoundation\Response;
 
 use \Symfony\Component\EventDispatcher\Event;
 
-class ControllerEvent extends Event
+class ResponseEvent extends Event
 {
 	/**
 	 * @var Response
