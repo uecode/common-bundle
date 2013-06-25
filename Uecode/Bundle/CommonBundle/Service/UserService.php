@@ -22,7 +22,7 @@ namespace Uecode\Bundle\CommonBundle\Service;
 
 use \Symfony\Component\Security\Core\SecurityContext;
 
-use \Uecode\Bundle\CommonBundle\Model\User;
+use \Uecode\Bundle\CommonBundle\Model\UserInterface;
 use \Uecode\Bundle\CommonBundle\Traits\DatabaseAwareTrait;
 
 /**
