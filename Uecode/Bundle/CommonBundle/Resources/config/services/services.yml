@@ -13,6 +13,7 @@ services:
     uecode.response:
         class: Uecode\Bundle\CommonBundle\Service\ResponseService
         calls:
+            - [ setDispatcher, [ @event_dispatcher ] ]
             - [ setTemplating, [ @templating ] ]
             - [ setView, [ @uecode.view ] ]
             - [ setKernel, [ @kernel ] ]
