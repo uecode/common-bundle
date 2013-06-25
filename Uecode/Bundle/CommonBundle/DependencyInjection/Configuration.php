@@ -33,7 +33,20 @@ class Configuration implements ConfigurationInterface
 	 */
 	public function appendTo( ArrayNodeDefinition &$rootNode )
 	{
-		$rootNode->append( $this->getServiceNode() );
+		$rootNode->append( $this->getCommonNode() );
+	}
+
+	/**
+	 *
+	 */
+	private function addCommonNode()
+	{
+		$treeBuilder = new TreeBuilder();
+		$rootNode    = $treeBuilder->root( 'common' );
+
+		$rootNode->append( $this->addServiceNode() );
+
+		return $rootNode;
 	}
 
 	/**
