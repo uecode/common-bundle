@@ -31,7 +31,7 @@ class Configuration implements ConfigurationInterface
 	/**
 	 * {@inheritDoc}
 	 */
-	public function appendTo( ArrayNodeDefinition &$rootNode );
+	public function appendTo( ArrayNodeDefinition &$rootNode )
 	{
 		$rootNode->append( $this->getServiceNode() );
 	}
