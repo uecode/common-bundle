@@ -18,7 +18,7 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License. 
  */
-namespace Uecode\Bundle\CommonBUndle\DependencyInjection;
+namespace Uecode\Bundle\CommonBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
