@@ -25,5 +25,5 @@ namespace Uecode\Bundle\CommonBundle\Service;
  */
 abstract class Service
 {
-	abstract public function init();
+	public function init() {}
 }
