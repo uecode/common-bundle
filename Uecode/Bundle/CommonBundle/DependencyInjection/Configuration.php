@@ -52,7 +52,7 @@ class Configuration implements ConfigurationInterface
 	/**
 	 *
 	 */
-	private function getServiceNode()
+	private function addServiceNode()
 	{
 		$treeBuilder = new TreeBuilder();
 		$node = $treeBuilder->root( 'services' );
