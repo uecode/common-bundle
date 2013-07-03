@@ -3,7 +3,7 @@ services:
         class: Uecode\Bundle\CommonBundle\Service\UserService
         arguments: [ %uecode.common.services.user.entity%, %uecode.common.services.user.id_property% ]
         calls:
-            - [ setSecurityContext, [ @security.context ] ]
+            - [ setSecurityContext, [ "@?security.context" ] ]
             - [ setEntityManager, [ @doctrine.orm.entity_manager ] ]
             - [ init ]
     uecode.view:
