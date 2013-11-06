@@ -51,7 +51,10 @@ class ResponseService extends Service
 
 	public function buildResponse( $content = null )
 	{
-		return new Response( $content);
+		$response = new Response( $content);
+		$response->headers->set( 'Content-Type', 'text/html' );
+
+		return $response;
 	}
 
 	public function returnErrors( $errors )
