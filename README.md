@@ -8,7 +8,7 @@ This bundle creates a simple way to incorporate Underground Elephant base code i
 1. Add to composer.json under `require`
 
 ```
-"uecode/common-bundle": "0.1.0",
+"uecode/common-bundle": "1.0.0",
 ```
 
 2. Register in `AppKernel`
