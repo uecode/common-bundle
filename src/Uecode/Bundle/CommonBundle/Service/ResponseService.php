@@ -110,6 +110,7 @@ class ResponseService extends Service
 			array_merge( [ 'vars' => $this->view ], $parameters ),
 			$response
 		);
+		$response->headers->set( 'Content-Type', 'text/html' );
 
 		$this->dispatcher->dispatch( UecodeCommonEvents::RENDER_TEMPLATE_RESPONSE, new ResponseEvent( $response ) );
 
