@@ -31,7 +31,10 @@ class InspectExtension extends \Twig_Extension
 
 	public function getFunctions()
 	{
-		return [ new Twig_SimpleFunction( 'inspect', [ $this, 'inspect' ] ) ];
+        return [ 
+            new Twig_SimpleFunction( 'inspect', [ $this, 'inspect' ] ),
+            new Twig_SimpleFunction( 'var_dump', [ $this, 'var_dump' ] ),
+        ];
 	}
 
 	/**
@@ -54,5 +57,12 @@ class InspectExtension extends \Twig_Extension
 		}
 
 		return \Uecode::dump( $variable, $depth, $die, $dumpOut );
-	}
+    }
+
+    public function var_dump($variable)
+    {
+        var_dump($variable);
+
+        return;
+    }
 }
