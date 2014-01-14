@@ -36,3 +36,7 @@ uecode_common:
 5. From here, you can have your controller extend `Uecode\Bundle\CommonBundle\Controller\Controller`
 
 6. You can also hook into the events that are defined in [`Uecode\Bundle\CommonBundle\UecodeCommonEvents`](Uecode\Bundle\CommonBundle\UecodeCommonEvents.php)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/uecode/common-bundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
