@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -29,40 +29,40 @@ use \Uecode\Bundle\CommonBundle\Model\UserInterface;
 class UserService extends Service
 {
 
-	/**
-	 * @var UserInterface|null
-	 */
-	private $user = null;
+    /**
+     * @var UserInterface|null
+     */
+    private $user = null;
 
-	/**
-	 * @var SecurityContext
-	 */
-	private $securityContext;
+    /**
+     * @var SecurityContext
+     */
+    private $securityContext;
 
-	/**
-	 * @param SecurityContextInterface $securityContext
-	 */
-	public function __construct( SecurityContextInterface $securityContext = null )
-	{
-		$this->securityContext = $securityContext;
-	}
+    /**
+     * @param SecurityContextInterface $securityContext
+     */
+    public function __construct(SecurityContextInterface $securityContext = null)
+    {
+        $this->securityContext = $securityContext;
+    }
 
-	/**
-	 * @param UserInterface $user
-	 *
-	 * @return UserService
-	 */
-	public function setUser( UserInterface $user )
-	{
-		$this->user = $user;
+    /**
+     * @param UserInterface $user
+     *
+     * @return UserService
+     */
+    public function setUser(UserInterface $user)
+    {
+        $this->user = $user;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return User
-	 */
-	public function getUser()
+    /**
+     * @return User
+     */
+    public function getUser()
     {
         if (null === $token = $this->securityContext->getToken()) {
             return null;
@@ -73,5 +73,5 @@ class UserService extends Service
         }
 
         return $user;
-	}
+    }
 }

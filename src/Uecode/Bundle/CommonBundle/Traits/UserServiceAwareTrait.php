@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -25,28 +25,28 @@ use \Uecode\Bundle\CommonBundle\Service\UserService;
 trait UserServiceAwareTrait
 {
 
-	/**
-	 * @var UserService
-	 */
-	protected $userService;
+    /**
+     * @var UserService
+     */
+    protected $userService;
 
-	/**
-	 * @param \Uecode\Bundle\CommonBundle\Service\UserService $userService
-	 *
-	 * @return UserServiceAwareTrait
-	 */
-	public function setUserService( $userService )
-	{
-		$this->userService = $userService;
+    /**
+     * @param \Uecode\Bundle\CommonBundle\Service\UserService $userService
+     *
+     * @return UserServiceAwareTrait
+     */
+    public function setUserService($userService)
+    {
+        $this->userService = $userService;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return \Uecode\Bundle\CommonBundle\Service\UserService
-	 */
-	public function getUserService()
-	{
-		return $this->userService;
-	}
+    /**
+     * @return \Uecode\Bundle\CommonBundle\Service\UserService
+     */
+    public function getUserService()
+    {
+        return $this->userService;
+    }
 }

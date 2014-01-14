@@ -1,8 +1,8 @@
 <?php
 /**
- * @package common-bundle
+ * @package       common-bundle
  * @copyright (c) 2013 Underground Elephant
- * @author Aaron Scherer
+ * @author        Aaron Scherer
  *
  * Copyright 2013 Underground Elephant
  *
@@ -29,15 +29,16 @@ use \Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class UecodeCommonExtension extends Extension
 {
-	/**
-	 * {@inheritdoc}
-	 */
-	public function load( array $configs, ContainerBuilder $container )
-	{
-		$dir    = __DIR__ . '/../Resources/config/services/';
-		$loader = new Loader\YamlFileLoader( $container, new FileLocator( $dir ) );
-		foreach ( glob( $dir . '*.yml' ) as $file ) {
-			$loader->load( $file );
-		}
-	}
+
+    /**
+     * {@inheritdoc}
+     */
+    public function load(array $configs, ContainerBuilder $container)
+    {
+        $dir    = __DIR__ . '/../Resources/config/services/';
+        $loader = new Loader\YamlFileLoader($container, new FileLocator($dir));
+        foreach (glob($dir . '*.yml') as $file) {
+            $loader->load($file);
+        }
+    }
 }

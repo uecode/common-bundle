@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -29,23 +29,23 @@ use Twig_SimpleFunction;
 class StringExtension extends \Twig_Extension
 {
 
-	public function getFunctions()
-	{
-		return [ new Twig_SimpleFunction( 'sprintf', [ $this, 'sprintf' ] ) ];
-	}
+    public function getFunctions()
+    {
+        return [new Twig_SimpleFunction('sprintf', [$this, 'sprintf'])];
+    }
 
-	/**
-	 * Returns the name of the extension.
-	 *
-	 * @return string The extension name
-	 */
-	public function getName()
-	{
-		return 'string';
-	}
+    /**
+     * Returns the name of the extension.
+     *
+     * @return string The extension name
+     */
+    public function getName()
+    {
+        return 'string';
+    }
 
-	public function sprintf( )
-	{
-		return call_user_func_array( 'sprintf', func_get_args() );
-	}
+    public function sprintf()
+    {
+        return call_user_func_array('sprintf', func_get_args());
+    }
 }

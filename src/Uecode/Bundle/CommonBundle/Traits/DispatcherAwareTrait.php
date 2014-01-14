@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -25,28 +25,28 @@ use \Symfony\Component\EventDispatcher\EventDispatcher;
 trait DispatcherAwareTrait
 {
 
-	/**
-	 * @var EventDispatcher
-	 */
-	protected $dispatcher;
+    /**
+     * @var EventDispatcher
+     */
+    protected $dispatcher;
 
-	/**
-	 * @param \Uecode\Bundle\CommonBundle\Service\Dispatcher $view
-	 *
-	 * @return ViewAwareTrait
-	 */
-	public function setDispatcher( $dispatcher )
-	{
-		$this->dispatcher = $dispatcher;
+    /**
+     * @param \Uecode\Bundle\CommonBundle\Service\Dispatcher $view
+     *
+     * @return ViewAwareTrait
+     */
+    public function setDispatcher($dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return \Uecode\Bundle\CommonBundle\Service\Dispatcher
-	 */
-	public function getDispatcher()
-	{
-		return $this->dispatcher;
-	}
+    /**
+     * @return \Uecode\Bundle\CommonBundle\Service\Dispatcher
+     */
+    public function getDispatcher()
+    {
+        return $this->dispatcher;
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -29,34 +29,34 @@ use Twig_SimpleFunction;
 class InspectExtension extends \Twig_Extension
 {
 
-	public function getFunctions()
-	{
-        return [ 
-            new Twig_SimpleFunction( 'inspect', [ $this, 'inspect' ] ),
-            new Twig_SimpleFunction( 'var_dump', [ $this, 'var_dump' ] ),
+    public function getFunctions()
+    {
+        return [
+            new Twig_SimpleFunction('inspect', [$this, 'inspect']),
+            new Twig_SimpleFunction('var_dump', [$this, 'var_dump']),
         ];
-	}
+    }
 
-	/**
-	 * Returns the name of the extension.
-	 *
-	 * @return string The extension name
-	 */
-	public function getName()
-	{
-		return 'inspect';
-	}
+    /**
+     * Returns the name of the extension.
+     *
+     * @return string The extension name
+     */
+    public function getName()
+    {
+        return 'inspect';
+    }
 
-	public function inspect( $variable, $depth = 5, $die = false, $dumpOut = false )
-	{
-		if ( is_object( $variable ) ) {
-			$variable = [
-				'methods'  => get_class_methods( $variable ),
-				'variable' => $variable
-			];
-		}
+    public function inspect($variable, $depth = 5, $die = false, $dumpOut = false)
+    {
+        if (is_object($variable)) {
+            $variable = [
+                'methods'  => get_class_methods($variable),
+                'variable' => $variable
+            ];
+        }
 
-		return \Uecode::dump( $variable, $depth, $die, $dumpOut );
+        return \Uecode::dump($variable, $depth, $die, $dumpOut);
     }
 
     public function var_dump($variable)

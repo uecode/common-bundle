@@ -1,8 +1,8 @@
 <?php
 /**
- * @package common-bundle
+ * @package       common-bundle
  * @copyright (c) 2013 Underground Elephant
- * @author Aaron Scherer
+ * @author        Aaron Scherer
  *
  * Copyright 2013 Underground Elephant
  *
@@ -39,44 +39,43 @@ use Uecode\Bundle\CommonBundle\Traits\ViewServiceAwareTrait;
  */
 abstract class Controller extends FrameworkController implements InitializableControllerInterface
 {
-	use DatabaseAwareTrait,
-	    UserServiceAwareTrait,
-	    ResponseServiceAwareTrait,
-	    ViewServiceAwareTrait;
 
-	/**
-	 * Initialization function.
-	 *
-	 * Called at the beginning of every controller. Used for simplifying controllers
-	 */
-	public function initialize( EntityManager $em, UserService $us, ResponseService $rs, ViewService $vws )
-	{
-		$this->setEntityManager( $em );
-		$this->setUserService( $us );
-		$this->setResponseService( $rs );
-		$this->setViewService( $vws );
-	}
+    use DatabaseAwareTrait, UserServiceAwareTrait, ResponseServiceAwareTrait, ViewServiceAwareTrait;
 
-	/**
-	 * Overwrites the render function 
-	 * 
-	 * @return Response
-	 */
-	public function render( $view, array $parameters = array(), Response $response = null )
-	{
-		return $this->getResponseService()->render( $view, $parameters, $response );
-	}
+    /**
+     * Initialization function.
+     *
+     * Called at the beginning of every controller. Used for simplifying controllers
+     */
+    public function initialize(EntityManager $em, UserService $us, ResponseService $rs, ViewService $vws)
+    {
+        $this->setEntityManager($em);
+        $this->setUserService($us);
+        $this->setResponseService($rs);
+        $this->setViewService($vws);
+    }
 
-	/**
-	 * Slugify's the given string
-	 *
-	 * @return string
-	 */
-	protected function slug( $string )
-	{
-		$str = strtolower( trim( $string ) );
-		$str = preg_replace( '/[^a-z0-9-]/', '-', $str );
+    /**
+     * Overwrites the render function
+     *
+     * @return Response
+     */
+    public function render($view, array $parameters = array(), Response $response = null)
+    {
+        return $this->getResponseService()
+            ->render($view, $parameters, $response);
+    }
 
-		return preg_replace( '/-+/', "-", $str );
-	}
+    /**
+     * Slugify's the given string
+     *
+     * @return string
+     */
+    protected function slug($string)
+    {
+        $str = strtolower(trim($string));
+        $str = preg_replace('/[^a-z0-9-]/', '-', $str);
+
+        return preg_replace('/-+/', "-", $str);
+    }
 }

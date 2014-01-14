@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -25,33 +25,33 @@ use \Uecode\Bundle\CommonBundle\Service\ResponseService;
 trait ResponseServiceAwareTrait
 {
 
-	/**
-	 * @var ResponseService
-	 */
-	protected $responseService;
+    /**
+     * @var ResponseService
+     */
+    protected $responseService;
 
-	/**
-	 * @param \Uecode\Bundle\CommonBundle\Service\ResponseService $responseService
-	 *
-	 * @return ResponseServiceAwareTrait
-	 */
-	public function setResponseService( $responseService )
-	{
-		$this->responseService = $responseService;
+    /**
+     * @param \Uecode\Bundle\CommonBundle\Service\ResponseService $responseService
+     *
+     * @return ResponseServiceAwareTrait
+     */
+    public function setResponseService($responseService)
+    {
+        $this->responseService = $responseService;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return \Uecode\Bundle\CommonBundle\Service\ResponseService
-	 */
-	public function getResponseService()
-	{
-		return $this->responseService;
-	}
+    /**
+     * @return \Uecode\Bundle\CommonBundle\Service\ResponseService
+     */
+    public function getResponseService()
+    {
+        return $this->responseService;
+    }
 
-	public function getResponse()
-	{
-		return $this->responseService;
-	}
+    public function getResponse()
+    {
+        return $this->responseService;
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -26,61 +26,64 @@ use \Uecode\Bundle\CommonBundle\Model\InitializableControllerInterface as Contro
 
 class ControllerEvent extends Event
 {
-	/**
-	 * @var Controller
-	 */
-	private $controller;
 
-	/**
-	 * @var FilterControllerEvent
-	 */
-	private $event;
+    /**
+     * @var Controller
+     */
+    private $controller;
 
-	/**
-	 * @param Controller            $controller
-	 * @param FilterControllerEvent $event
-	 */
-	public function __construct( Controller $controller, FilterControllerEvent $event )
-	{
-		$this->controller = $controller;
-		$this->event      = $event;
-	}
+    /**
+     * @var FilterControllerEvent
+     */
+    private $event;
 
-	/**
-	 * @return Controller
-	 */
-	public function getController( )
-	{
-		return $this->controller;
-	}
-	
-	/**
-	 * @param  Controller $controller
-	 * @return ControllerEvent
-	 */
-	public function setController( Controller $controller )
-	{
-		$this->controller = $controller;
-		
-		return $this;
-	}
+    /**
+     * @param Controller            $controller
+     * @param FilterControllerEvent $event
+     */
+    public function __construct(Controller $controller, FilterControllerEvent $event)
+    {
+        $this->controller = $controller;
+        $this->event      = $event;
+    }
 
-	/**
-	 * @return FilterControllerEvent
-	 */
-	public function getEvent( )
-	{
-		return $this->event;
-	}
+    /**
+     * @return Controller
+     */
+    public function getController()
+    {
+        return $this->controller;
+    }
 
-	/**
-	 * @param  FilterControllerEvent $event
-	 * @return ControllerEvent
-	 */
-	public function setEvent( FilterControllerEvent $event )
-	{
-		$this->event = $event;
-		
-		return $this;
-	}
+    /**
+     * @param  Controller $controller
+     *
+     * @return ControllerEvent
+     */
+    public function setController(Controller $controller)
+    {
+        $this->controller = $controller;
+
+        return $this;
+    }
+
+    /**
+     * @return FilterControllerEvent
+     */
+    public function getEvent()
+    {
+        return $this->event;
+    }
+
+    /**
+     * @param  FilterControllerEvent $event
+     *
+     * @return ControllerEvent
+     */
+    public function setEvent(FilterControllerEvent $event)
+    {
+        $this->event = $event;
+
+        return $this;
+    }
 }

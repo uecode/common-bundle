@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -25,33 +25,33 @@ use \Uecode\Bundle\CommonBundle\Service\ViewService;
 trait ViewServiceAwareTrait
 {
 
-	/**
-	 * @var ViewService
-	 */
-	protected $viewService;
+    /**
+     * @var ViewService
+     */
+    protected $viewService;
 
-	/**
-	 * @param \Uecode\Bundle\CommonBundle\Service\ViewService $view
-	 *
-	 * @return ViewAwareTrait
-	 */
-	public function setViewService( $viewService )
-	{
-		$this->viewService = $viewService;
+    /**
+     * @param \Uecode\Bundle\CommonBundle\Service\ViewService $view
+     *
+     * @return ViewAwareTrait
+     */
+    public function setViewService($viewService)
+    {
+        $this->viewService = $viewService;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return \Uecode\Bundle\CommonBundle\Service\ViewService
-	 */
-	public function getViewService()
-	{
-		return $this->viewService;
-	}
+    /**
+     * @return \Uecode\Bundle\CommonBundle\Service\ViewService
+     */
+    public function getViewService()
+    {
+        return $this->viewService;
+    }
 
-	public function getView()
-	{
-		return $this->viewService;
-	}
+    public function getView()
+    {
+        return $this->viewService;
+    }
 }

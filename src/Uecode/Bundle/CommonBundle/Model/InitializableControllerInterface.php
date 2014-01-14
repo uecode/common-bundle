@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -31,11 +31,11 @@ use \Uecode\Bundle\CommonBundle\Service\ViewService;
 interface InitializableControllerInterface
 {
 
-	public function initialize(
-		EntityManager $em,
-		UserService $us,
-		ResponseService $rs,
-		ViewService $vws
-	);
+    public function initialize(
+        EntityManager $em,
+        UserService $us,
+        ResponseService $rs,
+        ViewService $vws
+    );
 }
 

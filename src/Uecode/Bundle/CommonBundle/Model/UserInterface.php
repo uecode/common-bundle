@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -25,10 +25,11 @@ namespace Uecode\Bundle\CommonBundle\Model;
  */
 interface UserInterface
 {
-	/**
-	 * Gets the User ID for Database Retrieval
-	 *
-	 * @return int
-	 */
-	public function getUserId();
+
+    /**
+     * Gets the User ID for Database Retrieval
+     *
+     * @return int
+     */
+    public function getUserId();
 }

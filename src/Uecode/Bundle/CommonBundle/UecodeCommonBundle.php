@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -24,4 +24,5 @@ use \Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class UecodeCommonBundle extends Bundle
 {
+
 }

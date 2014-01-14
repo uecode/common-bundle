@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -31,61 +31,61 @@ use Symfony\Component\HttpKernel\KernelInterface;
 class FileExtension extends \Twig_Extension
 {
 
-	/**
-	 * @var KernelInterface
-	 */
-	protected $kernel;
+    /**
+     * @var KernelInterface
+     */
+    protected $kernel;
 
-	public function __construct( KernelInterface $kernel )
-	{
-		$this->kernel = $kernel;
-	}
+    public function __construct(KernelInterface $kernel)
+    {
+        $this->kernel = $kernel;
+    }
 
-	public function getFunctions()
-	{
-		$functions = [
-			new Twig_SimpleFunction( 'file_include', [ $this, 'file' ], [ 'is_safe' => [ 'html' ] ] ),
-			new Twig_SimpleFunction( 'file_exists', [ $this, 'fileExists' ] )
-		];
+    public function getFunctions()
+    {
+        $functions = [
+            new Twig_SimpleFunction('file_include', [$this, 'file'], ['is_safe' => ['html']]),
+            new Twig_SimpleFunction('file_exists', [$this, 'fileExists'])
+        ];
 
-		return $functions;
-	}
+        return $functions;
+    }
 
-	/**
-	 * Returns the name of the extension.
-	 *
-	 * @return string The extension name
-	 */
-	public function getName()
-	{
-		return 'file';
-	}
+    /**
+     * Returns the name of the extension.
+     *
+     * @return string The extension name
+     */
+    public function getName()
+    {
+        return 'file';
+    }
 
-	/**
-	 * Checks to see if the given file exists
-	 *
-	 * @param $path A logical path to the file ( e.g '@AcmeFooBundle:Foo:resource.txt' ).
-	 *
-	 * @return bool Whether or not the file exists
-	 */
-	public function fileExists( $path )
-	{
-		$path = $this->kernel->locateResource( $path, null, true );
+    /**
+     * Checks to see if the given file exists
+     *
+     * @param $path A logical path to the file ( e.g '@AcmeFooBundle:Foo:resource.txt' ).
+     *
+     * @return bool Whether or not the file exists
+     */
+    public function fileExists($path)
+    {
+        $path = $this->kernel->locateResource($path, null, true);
 
-		return file_exists( $path );
-	}
+        return file_exists($path);
+    }
 
-	/**
-	 * Returns the contents of a file to the template.
-	 *
-	 * @param string $path    A logical path to the file (e.g '@AcmeFooBundle:Foo:resource.txt').
-	 *
-	 * @return string         The contents of a file.
-	 */
-	public function file( $path )
-	{
-		$path = $this->kernel->locateResource( $path, null, true );
+    /**
+     * Returns the contents of a file to the template.
+     *
+     * @param string $path A logical path to the file (e.g '@AcmeFooBundle:Foo:resource.txt').
+     *
+     * @return string         The contents of a file.
+     */
+    public function file($path)
+    {
+        $path = $this->kernel->locateResource($path, null, true);
 
-		return file_get_contents( $path );
-	}
+        return file_get_contents($path);
+    }
 }

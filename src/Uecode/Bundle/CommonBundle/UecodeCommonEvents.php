@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -25,24 +25,25 @@ namespace Uecode\Bundle\CommonBundle;
  */
 final class UecodeCommonEvents
 {
-	/**
-	 * The PRE_CONTROLLER_INITIALIZE event occurs before `initialize()` is called on the controllers.
-	 *
-	 * This can be used to call certain functions on the controller before initialize is fired.
-	 */
-	const PRE_CONTROLLER_INITIALIZE  = 'uecode_common.controller.initialize.pre';
 
-	/**
-	 * The POST_CONTROLLER_INITIALIZE event occurs after `initialize()` is called on the controllers.
-	 *
-	 * This can be used to call certain functions on the controller after initialize is fired.
-	 */
-	const POST_CONTROLLER_INITIALIZE = 'uecode_common.controller.initialize.post';
+    /**
+     * The PRE_CONTROLLER_INITIALIZE event occurs before `initialize()` is called on the controllers.
+     *
+     * This can be used to call certain functions on the controller before initialize is fired.
+     */
+    const PRE_CONTROLLER_INITIALIZE = 'uecode_common.controller.initialize.pre';
 
-	/**
-	 * The RENDER_TEMPLATE_RESPONSE event occurs after the template engine has rendered the template, but before its returned. 
-	 *
-	 * This can be used to alter the response before it is sent
-	 */
-	const RENDER_TEMPLATE_RESPONSE   = 'uecode_common.response.render_template';
+    /**
+     * The POST_CONTROLLER_INITIALIZE event occurs after `initialize()` is called on the controllers.
+     *
+     * This can be used to call certain functions on the controller after initialize is fired.
+     */
+    const POST_CONTROLLER_INITIALIZE = 'uecode_common.controller.initialize.post';
+
+    /**
+     * The RENDER_TEMPLATE_RESPONSE event occurs after the template engine has rendered the template, but before its returned.
+     *
+     * This can be used to alter the response before it is sent
+     */
+    const RENDER_TEMPLATE_RESPONSE = 'uecode_common.response.render_template';
 }

@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -36,43 +36,48 @@ use \Uecode\Bundle\CommonBundle\Traits\DispatcherAwareTrait;
  */
 class ControllerListener
 {
-	use DatabaseAwareTrait,
-	    UserServiceAwareTrait,
-	    ResponseServiceAwareTrait,
-	    ViewServiceAwareTrait,
-	    DispatcherAwareTrait;
 
-	/**
-	 * Checks to see if the controller is an InitializableControllerInterface.
-	 * If it is, it initializes it with some of the services
-	 *
-	 * @param FilterControllerEvent $event
-	 * @return $mixed
-	 */
-	public function preController( FilterControllerEvent $event )
-	{
-		$controller = $event->getController();
+    use DatabaseAwareTrait, UserServiceAwareTrait, ResponseServiceAwareTrait, ViewServiceAwareTrait,
+        DispatcherAwareTrait;
 
-		// Return if its not an array
-		if ( !is_array( $controller ) ) {
-			return;
-		}
+    /**
+     * Checks to see if the controller is an InitializableControllerInterface.
+     * If it is, it initializes it with some of the services
+     *
+     * @param FilterControllerEvent $event
+     *
+     * @return $mixed
+     */
+    public function preController(FilterControllerEvent $event)
+    {
+        $controller = $event->getController();
 
-		$controllerObject = $controller[ 0 ];
+        // Return if its not an array
+        if (!is_array($controller)) {
+            return;
+        }
 
-		// Make sure it can initialize
-		if ( $controllerObject instanceof InitializableControllerInterface ) {
-			
-			$this->dispatcher->dispatch( UecodeCommonEvents::PRE_CONTROLLER_INITIALIZE, new ControllerEvent( $controllerObject, $event ) );
+        $controllerObject = $controller[0];
 
-			$controllerObject->initialize(
-				$this->getEntityManager(),
-				$this->getUserService(),
-				$this->getResponseService(),
-				$this->getViewService()
-			);
+        // Make sure it can initialize
+        if ($controllerObject instanceof InitializableControllerInterface) {
 
-			$this->dispatcher->dispatch( UecodeCommonEvents::POST_CONTROLLER_INITIALIZE, new ControllerEvent( $controllerObject, $event ) );
-		}
-	}
+            $this->dispatcher->dispatch(
+                UecodeCommonEvents::PRE_CONTROLLER_INITIALIZE,
+                new ControllerEvent($controllerObject, $event)
+            );
+
+            $controllerObject->initialize(
+                $this->getEntityManager(),
+                $this->getUserService(),
+                $this->getResponseService(),
+                $this->getViewService()
+            );
+
+            $this->dispatcher->dispatch(
+                UecodeCommonEvents::POST_CONTROLLER_INITIALIZE,
+                new ControllerEvent($controllerObject, $event)
+            );
+        }
+    }
 }

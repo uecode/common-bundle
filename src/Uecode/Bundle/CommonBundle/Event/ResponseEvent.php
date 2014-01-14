@@ -1,7 +1,7 @@
 <?php
 /**
- * @package common-bundle
- * @author Aaron Scherer
+ * @package       common-bundle
+ * @author        Aaron Scherer
  * @copyright (c) 2013 Underground Elephant
  *
  * Copyright 2013 Underground Elephant
@@ -20,43 +20,43 @@
  */
 namespace Uecode\Bundle\CommonBundle\Event;
 
-
-
 use \Symfony\Component\HttpFoundation\Response;
 
 use \Symfony\Component\EventDispatcher\Event;
 
 class ResponseEvent extends Event
 {
-	/**
-	 * @var Response
-	 */
-	private $response;
 
-	/**
-	 * @param Response $response
-	 */
-	public function __construct( Response $response)
-	{
-		$this->response = $response;
-	}
+    /**
+     * @var Response
+     */
+    private $response;
 
-	/**
-	 * @return Response
-	 */
-	public function getResponse( )
-	{
-		return $this->response;
-	}
+    /**
+     * @param Response $response
+     */
+    public function __construct(Response $response)
+    {
+        $this->response = $response;
+    }
 
-	/**
-	 * @param  Response $response
-	 * @return ResponseEvent
-	 */
-	public function setResponse( Response $response )
-	{
-		$this->response = $response;
+    /**
+     * @return Response
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
 
-		return $this;
-	}
+    /**
+     * @param  Response $response
+     *
+     * @return ResponseEvent
+     */
+    public function setResponse(Response $response)
+    {
+        $this->response = $response;
+
+        return $this;
+    }
 }
