@@ -92,7 +92,7 @@ class ResponseService extends Service
             }
         }
 
-        foreach ($$viewService->all() as $k => $v) {
+        foreach ($viewService->all() as $k => $v) {
             foreach ($reserved as $res) {
                 if ($k === $res) {
                     throw new \Exception("`{$res}` is a reserved variable. Please create a new variable.");
