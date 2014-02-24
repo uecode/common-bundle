@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,19 +19,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Model;
 
-use \Doctrine\ORM\EntityManager;
-use \Uecode\Bundle\CommonBundle\Service\UserService;
-use \Uecode\Bundle\CommonBundle\Service\ResponseService;
-use \Uecode\Bundle\CommonBundle\Service\ViewService;
+use Doctrine\ORM\EntityManager;
+use Uecode\Bundle\CommonBundle\Service\UserService;
+use Uecode\Bundle\CommonBundle\Service\ResponseService;
+use Uecode\Bundle\CommonBundle\Service\ViewService;
 
-/**
- * InitializableControllerInterface Class
- */
 interface InitializableControllerInterface
 {
-
     public function initialize(
         EntityManager $em,
         UserService $us,

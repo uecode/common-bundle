@@ -16,7 +16,7 @@ This bundle creates a simple way to incorporate Underground Elephant base code i
 ``` php
 	$bundles = array(
 	// ...
-	new Uecode\Bundle\CommonBundle\UecodeCommonBundle
+	new Uecode\Bundle\CommonBundle\UecodeCommonBundle(),
 ```
 
 3. Make sure, if you are using a user entity, it implements `Uecode\Bundle\CommonBundle\Model\UserInterface`

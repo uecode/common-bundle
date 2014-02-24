@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @copyright (c) 2013 Underground Elephant
@@ -21,15 +22,14 @@
 
 namespace Uecode\Bundle\CommonBundle\DependencyInjection;
 
-use \Symfony\Component\DependencyInjection\ContainerBuilder;
-use \Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
-use \Symfony\Component\Config\FileLocator;
-use \Symfony\Component\DependencyInjection\Loader;
-use \Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class UecodeCommonExtension extends Extension
 {
-
     /**
      * {@inheritdoc}
      */

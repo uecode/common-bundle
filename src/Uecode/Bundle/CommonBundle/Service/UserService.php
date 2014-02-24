@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,17 +19,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Service;
 
-use \Symfony\Component\Security\Core\SecurityContextInterface;
-use \Uecode\Bundle\CommonBundle\Model\UserInterface;
+use Symfony\Component\Security\Core\SecurityContextInterface;
+use Uecode\Bundle\CommonBundle\Model\UserInterface;
 
 /**
  * User service, for fetching user data
  */
 class UserService extends Service
 {
-
     /**
      * @var UserInterface|null
      */

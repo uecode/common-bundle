@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,10 +19,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace Uecode\Bundle\CommonBundle\Extension;
 
-use Twig_Extension;
-use Twig_SimpleFunction;
+namespace Uecode\Bundle\CommonBundle\Extension;
 
 /**
  * InspectExtension Class
@@ -32,8 +31,8 @@ class InspectExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            new Twig_SimpleFunction('inspect', [$this, 'inspect']),
-            new Twig_SimpleFunction('var_dump', [$this, 'var_dump']),
+            new \Twig_SimpleFunction('inspect', [$this, 'inspect']),
+            new \Twig_SimpleFunction('var_dump', [$this, 'var_dump']),
         ];
     }
 

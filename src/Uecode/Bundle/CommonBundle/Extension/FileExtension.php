@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,19 +19,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace Uecode\Bundle\CommonBundle\Extension;
 
-use Twig_Extension;
-use Twig_SimpleFunction;
+namespace Uecode\Bundle\CommonBundle\Extension;
 
 use Symfony\Component\HttpKernel\KernelInterface;
 
-/**
- * FileExtension Class
- */
 class FileExtension extends \Twig_Extension
 {
-
     /**
      * @var KernelInterface
      */
@@ -44,8 +39,8 @@ class FileExtension extends \Twig_Extension
     public function getFunctions()
     {
         $functions = [
-            new Twig_SimpleFunction('file_include', [$this, 'file'], ['is_safe' => ['html']]),
-            new Twig_SimpleFunction('file_exists', [$this, 'fileExists'])
+            new \Twig_SimpleFunction('file_include', [$this, 'file'], ['is_safe' => ['html']]),
+            new \Twig_SimpleFunction('file_exists', [$this, 'fileExists'])
         ];
 
         return $functions;
@@ -66,7 +61,7 @@ class FileExtension extends \Twig_Extension
      *
      * @param $path A logical path to the file ( e.g '@AcmeFooBundle:Foo:resource.txt' ).
      *
-     * @return bool Whether or not the file exists
+     * @return Boolean Whether or not the file exists
      */
     public function fileExists($path)
     {

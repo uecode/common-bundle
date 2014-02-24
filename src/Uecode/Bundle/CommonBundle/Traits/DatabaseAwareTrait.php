@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,6 +19,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Traits;
 
 use Doctrine\Bundle\DoctrineBundle\Registry;
@@ -26,7 +28,6 @@ use Doctrine\ORM\EntityManager;
 
 trait DatabaseAwareTrait
 {
-
     /**
      * @var \Doctrine\Bundle\DoctrineBundle\Registry Doctrine Registry
      */

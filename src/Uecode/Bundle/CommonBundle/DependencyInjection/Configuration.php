@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @copyright (c) 2013 Underground Elephant
@@ -18,16 +19,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
-use \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
-
-use \Uecode\Bundle\UecodeBundle\DependencyInjection\ConfigurationInterface;
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Uecode\Bundle\UecodeBundle\DependencyInjection\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
-
     /**
      * {@inheritDoc}
      */
@@ -36,9 +36,6 @@ class Configuration implements ConfigurationInterface
         $rootNode->append($this->addCommonNode());
     }
 
-    /**
-     *
-     */
     private function addCommonNode()
     {
         $treeBuilder = new TreeBuilder();
@@ -49,9 +46,6 @@ class Configuration implements ConfigurationInterface
         return $rootNode;
     }
 
-    /**
-     *
-     */
     private function addServiceNode()
     {
         $treeBuilder = new TreeBuilder();
