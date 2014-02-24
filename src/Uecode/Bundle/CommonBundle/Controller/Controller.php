@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @copyright (c) 2013 Underground Elephant
@@ -18,6 +19,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Controller;
 
 use Doctrine\ORM\EntityManager;
@@ -39,7 +41,6 @@ use Uecode\Bundle\CommonBundle\Traits\ViewServiceAwareTrait;
  */
 abstract class Controller extends FrameworkController implements InitializableControllerInterface
 {
-
     use DatabaseAwareTrait, UserServiceAwareTrait, ResponseServiceAwareTrait, ViewServiceAwareTrait;
 
     /**
@@ -58,6 +59,9 @@ abstract class Controller extends FrameworkController implements InitializableCo
     /**
      * Overwrites the render function
      *
+     * @param $view
+     * @param array $parameters
+     * @param \Symfony\Component\HttpFoundation\Response $response
      * @return Response
      */
     public function render($view, array $parameters = array(), Response $response = null)
@@ -69,6 +73,7 @@ abstract class Controller extends FrameworkController implements InitializableCo
     /**
      * Slugify's the given string
      *
+     * @param string $string
      * @return string
      */
     protected function slug($string)

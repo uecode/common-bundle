@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,20 +19,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Traits;
 
-use \Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 
 trait DispatcherAwareTrait
 {
-
     /**
      * @var EventDispatcher
      */
     protected $dispatcher;
 
     /**
-     * @param \Uecode\Bundle\CommonBundle\Service\Dispatcher $view
+     * @param \Uecode\Bundle\CommonBundle\Service\Dispatcher $dispatcher
      *
      * @return ViewAwareTrait
      */

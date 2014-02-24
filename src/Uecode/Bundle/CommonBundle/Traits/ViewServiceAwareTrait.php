@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,20 +19,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Traits;
 
-use \Uecode\Bundle\CommonBundle\Service\ViewService;
+use Uecode\Bundle\CommonBundle\Service\ViewService;
 
 trait ViewServiceAwareTrait
 {
-
     /**
      * @var ViewService
      */
     protected $viewService;
 
     /**
-     * @param \Uecode\Bundle\CommonBundle\Service\ViewService $view
+     * @param \Uecode\Bundle\CommonBundle\Service\ViewService $viewService
      *
      * @return ViewAwareTrait
      */

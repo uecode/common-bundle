@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,13 +19,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Traits;
 
-use \Uecode\Bundle\CommonBundle\Service\ResponseService;
+use Uecode\Bundle\CommonBundle\Service\ResponseService;
 
 trait ResponseServiceAwareTrait
 {
-
     /**
      * @var ResponseService
      */

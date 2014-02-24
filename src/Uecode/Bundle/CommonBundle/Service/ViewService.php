@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,6 +19,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Service;
 
 use Symfony\Component\Config\Definition\Exception\DuplicateKeyException;
@@ -28,7 +30,6 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  */
 class ViewService extends Service
 {
-
     const GET_DEFAULT = 'DEFAULTGETFORVIEW';
 
     /**

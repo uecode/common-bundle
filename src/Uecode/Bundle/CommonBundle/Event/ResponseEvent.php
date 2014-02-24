@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,15 +19,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Event;
 
-use \Symfony\Component\HttpFoundation\Response;
-
-use \Symfony\Component\EventDispatcher\Event;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\EventDispatcher\Event;
 
 class ResponseEvent extends Event
 {
-
     /**
      * @var Response
      */

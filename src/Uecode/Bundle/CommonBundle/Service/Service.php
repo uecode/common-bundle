@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,15 +19,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Service;
 
-/**
- * Abstract Service Class
- */
 abstract class Service
 {
-
     public function init()
     {
+        // no op
     }
 }

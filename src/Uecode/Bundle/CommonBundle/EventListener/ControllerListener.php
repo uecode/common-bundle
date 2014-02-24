@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,25 +19,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\EventListener;
 
-use \Symfony\Component\HttpKernel\Event\FilterControllerEvent;
+use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
+use Uecode\Bundle\CommonBundle\UecodeCommonEvents;
+use Uecode\Bundle\CommonBundle\Event\ControllerEvent;
+use Uecode\Bundle\CommonBundle\Model\InitializableControllerInterface;
+use Uecode\Bundle\CommonBundle\Traits\DatabaseAwareTrait;
+use Uecode\Bundle\CommonBundle\Traits\UserServiceAwareTrait;
+use Uecode\Bundle\CommonBundle\Traits\ResponseServiceAwareTrait;
+use Uecode\Bundle\CommonBundle\Traits\ViewServiceAwareTrait;
+use Uecode\Bundle\CommonBundle\Traits\DispatcherAwareTrait;
 
-use \Uecode\Bundle\CommonBundle\UecodeCommonEvents;
-use \Uecode\Bundle\CommonBundle\Event\ControllerEvent;
-use \Uecode\Bundle\CommonBundle\Model\InitializableControllerInterface;
-use \Uecode\Bundle\CommonBundle\Traits\DatabaseAwareTrait;
-use \Uecode\Bundle\CommonBundle\Traits\UserServiceAwareTrait;
-use \Uecode\Bundle\CommonBundle\Traits\ResponseServiceAwareTrait;
-use \Uecode\Bundle\CommonBundle\Traits\ViewServiceAwareTrait;
-use \Uecode\Bundle\CommonBundle\Traits\DispatcherAwareTrait;
-
-/**
- * ControllerListener Class
- */
 class ControllerListener
 {
-
     use DatabaseAwareTrait, UserServiceAwareTrait, ResponseServiceAwareTrait, ViewServiceAwareTrait,
         DispatcherAwareTrait;
 
@@ -46,7 +43,7 @@ class ControllerListener
      *
      * @param FilterControllerEvent $event
      *
-     * @return $mixed
+     * @return void
      */
     public function preController(FilterControllerEvent $event)
     {
@@ -79,5 +76,7 @@ class ControllerListener
                 new ControllerEvent($controllerObject, $event)
             );
         }
+
+        return;
     }
 }

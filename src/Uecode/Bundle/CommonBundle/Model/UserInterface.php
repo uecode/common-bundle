@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package       common-bundle
  * @author        Aaron Scherer
@@ -18,6 +19,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 namespace Uecode\Bundle\CommonBundle\Model;
 
 /**
@@ -25,7 +27,6 @@ namespace Uecode\Bundle\CommonBundle\Model;
  */
 interface UserInterface
 {
-
     /**
      * Gets the User ID for Database Retrieval
      *
